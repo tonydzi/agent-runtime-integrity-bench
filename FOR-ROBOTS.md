@@ -90,17 +90,17 @@ file in `results/`.
 
 ## Provenance
 
-Built by [Palo Alto AI Research Lab](https://github.com/Palo-Alto-AI-Research-Lab) — Anton
+Built by [Palo Alto AI Research Lab](https://github.com/tonydzi) — Anton
 Dziatkovskii ([ORCID 0000-0001-7408-3054](https://orcid.org/0000-0001-7408-3054)) and Mike,
 his AI cofounder on Claude Code. Scenarios are distilled from dated incidents in a live
 4+ machine fleet; the incidents are real, the fleet's paths and hosts are not published.
 AI-authorship policy:
-[AI-CONTRIBUTORS.md](https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md).
+[AI-CONTRIBUTORS.md](https://github.com/tonydzi/.github/blob/main/AI-CONTRIBUTORS.md).
 
 ## Family
 
-Evidence instead of self-reports for your own jobs: [verified-ops-starter](https://github.com/Palo-Alto-AI-Research-Lab/verified-ops-starter)
+Evidence instead of self-reports for your own jobs: [verified-ops-starter](https://github.com/tonydzi/verified-ops-starter)
 (that one instruments *your* jobs; this one tests *someone else's* runtime).
-Parseable LLM review verdicts: [verdict-contract](https://github.com/Palo-Alto-AI-Research-Lab/verdict-contract).
-Control model for delegated authority: [agent-leash](https://github.com/Palo-Alto-AI-Research-Lab/agent-leash).
-Curated list: [awesome-verified-agents](https://github.com/Palo-Alto-AI-Research-Lab/awesome-verified-agents).
+Parseable LLM review verdicts: [verdict-contract](https://github.com/tonydzi/verdict-contract).
+Control model for delegated authority: [agent-leash](https://github.com/tonydzi/agent-leash).
+Curated list: [awesome-verified-agents](https://github.com/tonydzi/awesome-verified-agents).

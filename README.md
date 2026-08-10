@@ -1,6 +1,6 @@
 # agent-runtime-integrity-bench
 
-[![selftest](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/actions/workflows/selftest.yml/badge.svg)](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/actions/workflows/selftest.yml)
+[![selftest](https://github.com/tonydzi/agent-runtime-integrity-bench/actions/workflows/selftest.yml/badge.svg)](https://github.com/tonydzi/agent-runtime-integrity-bench/actions/workflows/selftest.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Integrity scenarios for agent runtimes, distilled from real incidents in a production
@@ -120,7 +120,7 @@ finding that persists look identical in a blog post; they look different in a da
 ## Quickstart
 
 ```
-git clone https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench
+git clone https://github.com/tonydzi/agent-runtime-integrity-bench
 cd agent-runtime-integrity-bench
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt   # 3 of 4 backends
@@ -174,7 +174,7 @@ The remaining openai-agents backends (`RedisSession`, `MongoDBSession`, `DaprSes
 
 ## Provenance & disclosure
 
-Built by [Palo Alto AI Research Lab](https://github.com/Palo-Alto-AI-Research-Lab).
+Built by [Palo Alto AI Research Lab](https://github.com/tonydzi).
 Code written with an AI agent (Claude); a human verified: the checks were run
 live on the versions stated, the AsyncSQLiteSession source was read to confirm
 the mechanism (check-outside-lock, missing `_closed` flag), the self-test
@@ -217,7 +217,7 @@ License: MIT.
 
 ## Roadmap
 
-**Now — [v0.2.0](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/releases/tag/v0.2.0).**
+**Now — [v0.2.0](https://github.com/tonydzi/agent-runtime-integrity-bench/releases/tag/v0.2.0).**
 Two scenarios, four invariants, four adapters, measured against `openai-agents` 0.19.2 **and**
 0.19.4; every published verdict is a dated JSON file under `results/`, reproduced identically on
 macOS and on CI Ubuntu. The 0.19.4 re-run is the first time this bench has watched one of its own
@@ -239,7 +239,7 @@ findings get fixed upstream and said so in the same file format it used to repor
 
 Every noticeable change ships as a new release, and a result about someone else's library is a
 noticeable change: the
-[release feed](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/releases)
+[release feed](https://github.com/tonydzi/agent-runtime-integrity-bench/releases)
 is where the scope of what we have actually measured is recorded.
 
 ## AI contributors
@@ -248,7 +248,7 @@ This project is built by a human + AI team, and the git log says so: Claude
 writes most of the code, Codex and Grok review it, Gemini feeds the research.
 Each is credited on a commit **only if its output changed that commit's
 content** — no decorative credits. Lab-wide policy, one source for every repo:
-[AI-CONTRIBUTORS.md](https://github.com/Palo-Alto-AI-Research-Lab/.github/blob/main/AI-CONTRIBUTORS.md).
+[AI-CONTRIBUTORS.md](https://github.com/tonydzi/.github/blob/main/AI-CONTRIBUTORS.md).
 
 ---
 
@@ -261,7 +261,7 @@ cofounder, and a fleet of machines that reach consensus with each other and wake
 for money or the irreversible. It was extracted after it survived production, not written as a
 demo — and it runs on its own: nothing here phones home to the rest.
 
-**See how the whole thing fits together → [SYSTEM.md](https://github.com/tonydzi/Palo-Alto-AI-Research-Lab/blob/main/SYSTEM.md)**
+**See how the whole thing fits together → [SYSTEM.md](https://github.com/tonydzi/tonydzi/blob/main/SYSTEM.md)**
 
 Its closest neighbours in the **gates** layer: [`verbatim-citation-gate`](https://github.com/tonydzi/verbatim-citation-gate) · [`verdict-contract`](https://github.com/tonydzi/verdict-contract) · [`claim-check`](https://github.com/tonydzi/claim-check)
 
