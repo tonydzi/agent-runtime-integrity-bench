@@ -1,0 +1,35 @@
+<html>
+<head><meta charset="utf-8"><style>
+  html,body{margin:0;padding:0}
+  body{width:1280px;height:640px;background:#0d1117;color:#c9d1d9;
+       font-family:ui-monospace,SFMono-Regular,Menlo,"DejaVu Sans Mono",monospace;
+       display:flex;flex-direction:column;justify-content:center;padding:0 72px;box-sizing:border-box}
+  .kicker{font-size:21px;color:#8b949e;letter-spacing:.06em;margin-bottom:26px}
+  h1{font-size:56px;line-height:1.12;margin:0 0 26px;color:#e6edf3;font-weight:600;letter-spacing:-.01em}
+  h1 .hl{color:#f85149}
+  .sub{font-size:25px;line-height:1.5;color:#8b949e;margin:0 0 40px;max-width:1030px}
+  .row{display:flex;gap:14px;margin-bottom:38px}
+  .chip{font-size:20px;padding:11px 20px;border-radius:8px;border:1px solid #30363d;background:#161b22}
+  .viol{color:#f85149;border-color:#5c2b28}
+  .held{color:#3fb950;border-color:#1f4529}
+  .na{color:#8b949e}
+  .foot{width:100%;font-size:20px;color:#6e7681;display:flex;justify-content:space-between;align-items:center}
+  .foot b{color:#79c0ff;font-weight:500}
+</style></head>
+<body>
+  <div class="kicker">github.com/tonydzi/agent-runtime-integrity-bench</div>
+  <h1>Your agent's session store says<br>it saved. <span class="hl">Prove it.</span></h1>
+  <p class="sub">Deterministic fault injection against four real <code>openai-agents</code> session
+     backends — the failure class where every component reports success while the invariant is dead.</p>
+  <div class="row">
+    <div class="chip held">10 held</div>
+    <div class="chip viol">4 violated</div>
+    <div class="chip na">2 n/a</div>
+    <div class="chip">0.19.4 · 2026-08-10 · exit 1</div>
+  </div>
+  <div class="foot">
+    <span>No API key · no network · no model call · one command</span>
+    <span><b>MIT</b> · every verdict is a dated JSON file</span>
+  </div>
+</body>
+</html>
