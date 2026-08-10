@@ -12,6 +12,13 @@ Most agent-runtime failures we have lived through were **silent**: every compone
 success while an invariant was dead. A benchmark that only measures task success cannot see
 this class, so this one injects the fault and checks the invariant directly (`bench/core.py`).
 
+![One run of the benchmark: 16 checks against four openai-agents session backends, four of them violated, exit code 1](.github/assets/demo.svg)
+
+<sub>Real output of `python run_bench.py` against `openai-agents` 0.19.4 — three minutes, no API
+key, no network, no model call. Regenerate the frame with
+[`.github/assets/make_demo.py`](.github/assets/make_demo.py); the full report is
+[`results/2026-08-10-openai-agents-0.19.4.json`](results/2026-08-10-openai-agents-0.19.4.json).</sub>
+
 ## Why these scenarios (the incidents behind them)
 
 Each scenario is modeled on a dated incident from our own fleet — 4+ machines running
@@ -76,6 +83,39 @@ The two `AsyncSQLiteSession` findings independently reproduce [openai/openai-age
 The sync `SQLiteSession` holds both invariants, which shows the fix shape already exists in the same codebase; both verdicts are in [`results/2026-08-02-openai-agents-0.19.2.json`](results/2026-08-02-openai-agents-0.19.2.json).
 
 ARIB-CONC-003 is the one we care most about: **silent state resurrection is the same failure class as our 25-day ledger split of 2026-07-31** — the caller believes the store is closed and finished, while the runtime keeps writing somewhere the caller no longer watches (`bench/s3_concurrent_memory.py`).
+
+## Re-run — openai-agents 0.19.4 (2026-08-10): two of the six violations are gone
+
+The table above is a dated measurement of 0.19.2, kept as written. Here is what the same
+benchmark says about the current release, and it is not the same thing.
+
+| | 0.19.2 (2026-08-02) | 0.19.4 (2026-08-10) |
+|---|---|---|
+| held | 8 | **10** |
+| violated | 6 | **4** |
+| not applicable | 2 | 2 |
+
+Both `AsyncSQLiteSession` close findings — ARIB-CONC-002 (`AttributeError` in 20/20 trials) and
+ARIB-CONC-003 (write silently committed to a resurrected connection) — now **hold**.
+Report: [`results/2026-08-10-openai-agents-0.19.4.json`](results/2026-08-10-openai-agents-0.19.4.json).
+
+**The version is the variable, and that was checked rather than assumed.** On the same machine, the
+same day, with the same Python 3.12.13 / aiosqlite 0.22.1 / SQLAlchemy 2.0.51, a pinned 0.19.2
+re-run still produces the original six violations:
+[`results/2026-08-10-openai-agents-0.19.2-control.json`](results/2026-08-10-openai-agents-0.19.2-control.json).
+Diff the two files — the only difference between them is the SDK.
+
+**Credit where it belongs.** The bug was reported upstream by
+[@hsusul in #3983](https://github.com/openai/openai-agents-python/issues/3983); we reproduced it
+deterministically and added the second failure mode to that thread. It was fixed by
+[#4109](https://github.com/openai/openai-agents-python/pull/4109) (by @chinmayv095, merged
+2026-08-02) and shipped in **v0.19.3**, and the maintainer closed the issue on that basis. We did
+not write the fix. What this benchmark did was make the claim checkable in both directions: the
+same command that produced the red cell produces the green one.
+
+**ARIB-REPLAY-001 is unchanged: all four backends still duplicate a redelivered batch**, and none
+claims otherwise — `add_items()` still carries no idempotency key. A finding that ages out and a
+finding that persists look identical in a blog post; they look different in a dated report.
 
 ## Quickstart
 
@@ -163,13 +203,25 @@ result as a manufactured finding — that objection is why those two cells read
 *human* eyes. Treat the two new adapters as reproducible-and-machine-reviewed
 until that happens.
 
+**2026-08-10 re-run** (`0.19.4` report, the pinned `0.19.2` control, this section, the demo frame
+at the top) was likewise produced by the agent without a human in the loop. What backs it: both
+reports come from live runs on one machine on one day, with the SDK version as the only
+difference between them; the 0.19.4 run was repeated and the verdict set was byte-identical; the
+upstream attribution is taken from the maintainer's own closing comment on
+[#3983](https://github.com/openai/openai-agents-python/issues/3983) and the merge state of
+[#4109](https://github.com/openai/openai-agents-python/pull/4109), not inferred from the version
+bump. What does **not** back it: a CI re-run on Linux at 0.19.4 (the published cross-platform
+check is still the 0.19.2 pair), and human eyes.
+
 License: MIT.
 
 ## Roadmap
 
-**Now — [v0.1.0](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/releases/tag/v0.1.0).**
-Two scenarios, four invariants, four adapters against `openai-agents` 0.19.2; every published
-verdict is a dated JSON file under `results/`, reproduced identically on macOS and on CI Ubuntu.
+**Now — [v0.2.0](https://github.com/Palo-Alto-AI-Research-Lab/agent-runtime-integrity-bench/releases/tag/v0.2.0).**
+Two scenarios, four invariants, four adapters, measured against `openai-agents` 0.19.2 **and**
+0.19.4; every published verdict is a dated JSON file under `results/`, reproduced identically on
+macOS and on CI Ubuntu. The 0.19.4 re-run is the first time this bench has watched one of its own
+findings get fixed upstream and said so in the same file format it used to report it.
 
 **Next**, in the order we would take them:
 

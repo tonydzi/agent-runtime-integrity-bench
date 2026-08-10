@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="801" height="470" viewBox="0 0 801 470" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,DejaVu Sans Mono,monospace" font-size="12">
+<rect width="801" height="470" rx="8" fill="#0d1117"/>
+<rect width="801" height="30" rx="8" fill="#161b22"/>
+<rect y="22" width="801" height="8" fill="#161b22"/>
+<circle cx="20" cy="15.0" r="5.5" fill="#ff5f56"/>
+<circle cx="38" cy="15.0" r="5.5" fill="#ffbd2e"/>
+<circle cx="56" cy="15.0" r="5.5" fill="#27c93f"/>
+<text x="400.5" y="19.0" fill="#8b949e" text-anchor="middle" font-size="11">agent-runtime-integrity-bench — openai-agents 0.19.4, no API key, no network</text>
+<text x="18" y="58" fill="#79c0ff">$</text>
+<text x="32.4" y="58" fill="#c9d1d9" opacity="1">p<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0001;0.0041;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="39.7" y="58" fill="#c9d1d9" opacity="1">y<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0070;0.0110;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="46.9" y="58" fill="#c9d1d9" opacity="1">t<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0140;0.0180;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="54.1" y="58" fill="#c9d1d9" opacity="1">h<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0210;0.0250;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="61.3" y="58" fill="#c9d1d9" opacity="1">o<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0280;0.0320;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="68.5" y="58" fill="#c9d1d9" opacity="1">n<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0350;0.0390;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="75.8" y="58" fill="#c9d1d9" opacity="1"> <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0420;0.0460;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="83.0" y="58" fill="#c9d1d9" opacity="1">r<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0490;0.0530;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="90.2" y="58" fill="#c9d1d9" opacity="1">u<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0560;0.0600;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="97.4" y="58" fill="#c9d1d9" opacity="1">n<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0630;0.0670;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="104.6" y="58" fill="#c9d1d9" opacity="1">_<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0700;0.0740;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="111.9" y="58" fill="#c9d1d9" opacity="1">b<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0770;0.0810;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="119.1" y="58" fill="#c9d1d9" opacity="1">e<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0840;0.0880;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="126.3" y="58" fill="#c9d1d9" opacity="1">n<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0910;0.0950;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="133.5" y="58" fill="#c9d1d9" opacity="1">c<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.0980;0.1020;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="140.7" y="58" fill="#c9d1d9" opacity="1">h<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1050;0.1090;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="148.0" y="58" fill="#c9d1d9" opacity="1">.<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1120;0.1160;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="155.2" y="58" fill="#c9d1d9" opacity="1">p<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1190;0.1230;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="162.4" y="58" fill="#c9d1d9" opacity="1">y<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1260;0.1300;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="77" fill="#d29922" opacity="1" xml:space="preserve">== summary ==<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1718;0.1758;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="96" fill="#f85149" opacity="1" xml:space="preserve">VIOL ARIB-REPLAY-001    [sqlite] redelivered batch (same logical message) is visible exactly once<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1896;0.1936;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="115" fill="#f85149" opacity="1" xml:space="preserve">VIOL ARIB-REPLAY-001    [async-sqlite] redelivered batch (same logical message) is visible exactly once<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2073;0.2113;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="134" fill="#f85149" opacity="1" xml:space="preserve">VIOL ARIB-REPLAY-001    [advanced-sqlite] redelivered batch (same logical message) is visible exactly o…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2251;0.2291;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="153" fill="#f85149" opacity="1" xml:space="preserve">VIOL ARIB-REPLAY-001    [sqlalchemy] redelivered batch (same logical message) is visible exactly once<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2428;0.2468;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="172" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-001      [sqlite] 200 concurrent appends -&gt; 200 visible items, 0 lost, 0 duplicated<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2605;0.2645;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="191" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-002      [sqlite] close() is idempotent under concurrency: two concurrent close() never …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2783;0.2823;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="210" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-003      [sqlite] a write after close() is refused loudly (exception), never silently co…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2960;0.3000;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="229" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-001      [async-sqlite] 200 concurrent appends -&gt; 200 visible items, 0 lost, 0 duplicated<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3137;0.3177;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="248" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-002      [async-sqlite] close() is idempotent under concurrency: two concurrent close() …<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3315;0.3355;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="267" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-003      [async-sqlite] a write after close() is refused loudly (exception), never silen…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3492;0.3532;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="286" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-001      [advanced-sqlite] 200 concurrent appends -&gt; 200 visible items, 0 lost, 0 duplic…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3670;0.3710;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="305" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-002      [advanced-sqlite] close() is idempotent under concurrency: two concurrent close…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3847;0.3887;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="324" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-003      [advanced-sqlite] a write after close() is refused loudly (exception), never si…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4024;0.4064;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="343" fill="#3fb950" opacity="1" xml:space="preserve">OK   ARIB-CONC-001      [sqlalchemy] 200 concurrent appends -&gt; 200 visible items, 0 lost, 0 duplicated<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4202;0.4242;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="362" fill="#8b949e" opacity="1" xml:space="preserve">N/A  ARIB-CONC-002      [sqlalchemy] close() is idempotent under concurrency: two concurrent close() ne…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4379;0.4419;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="381" fill="#8b949e" opacity="1" xml:space="preserve">N/A  ARIB-CONC-003      [sqlalchemy] a write after close() is refused loudly (exception), never silentl…<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4557;0.4597;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="419" fill="#79c0ff" opacity="1" xml:space="preserve">$ echo $?              # 0 all held · 1 violations found · 4 harness itself failed<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5344;0.5384;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<text x="18" y="438" fill="#f85149" opacity="1" xml:space="preserve">1<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5344;0.5384;0.985;1" dur="9.02s" repeatCount="indefinite"/></text>
+<rect x="169.6" y="48" width="7.2" height="14" fill="#c9d1d9" opacity="0.8"><animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/></rect>
+<rect width="1" height="1" fill="#0d1117" opacity="0"><animate attributeName="opacity" values="0;0" dur="9.02s" repeatCount="indefinite"/></rect>
+</svg>
