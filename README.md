@@ -117,6 +117,47 @@ same command that produced the red cell produces the green one.
 claims otherwise — `add_items()` still carries no idempotency key. A finding that ages out and a
 finding that persists look identical in a blog post; they look different in a dated report.
 
+## Re-run — openai-agents 0.23.1 (2026-10-09): the close fix still holds, replay still duplicates
+
+Raw report: [`results/2026-10-09-openai-agents-0.23.1.json`](results/2026-10-09-openai-agents-0.23.1.json)
+— 16 findings, 10 held, 4 violated, 2 not applicable (Python 3.12.13, macOS, aiosqlite 0.22.1,
+sqlalchemy 2.1.4).
+
+Both `AsyncSQLiteSession` findings that 0.19.4 turned green are **still green** on 0.23.1: CONC-002
+and CONC-003 hold on every backend that exposes a `close()`. A fix that shipped and a fix that
+survived four more releases look identical in a changelog; a dated re-run tells them apart.
+
+**ARIB-REPLAY-001 is still violated on all four backends**, now across three dated runtime
+versions — `add_items()` still carries no idempotency key.
+
+### Published evidence shape: the ordered effect trace
+
+REPLAY-001 publishes the **ordered trace of realized effects** alongside the count:
+
+```json
+"evidence": {
+  "visible_occurrences": 2,
+  "evidence_kind": "observed_effect_trace",
+  "authorized_effects": 1,
+  "effect_trace": [
+    {"seq": 1, "store_index": 0, "effect_key": "session.history.item", "content_digest": "sha256:4e2d445199ec"},
+    {"seq": 2, "store_index": 1, "effect_key": "session.history.item", "content_digest": "sha256:4e2d445199ec"}
+  ]
+}
+```
+
+The count alone erases **cardinality**, and cardinality is the entire failure here: the duplicate
+sits on the right resource with the right logical value, so a checker reading only path scope and
+value fidelity passes it. One authorization, two durable effects — visible in a trace, invisible in
+a summary.
+
+This came out of [issue #1](https://github.com/tonydzi/agent-runtime-integrity-bench/issues/1),
+where an external conformance model had to *reconstruct* the trace from our count, and correctly
+labelled its own result derived rather than observed. That provenance gap was in our output, not in
+their method. `selftest.py` now fails if the trace is missing, disagrees with the count, is
+unordered, or is not marked observed — the mutant that proves it emits a deduplicated trace while
+the count stays honest.
+
 ## Quickstart
 
 ```

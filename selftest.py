@@ -211,6 +211,35 @@ def main() -> int:
         if len(results[store_name]) != 4:
             failures.append(f"{store_name}: {len(results[store_name])} findings emitted, expected 4")
 
+    # Effect-trace cardinality. The occurrence count is what an external
+    # conformance reader cannot work from: two durable effects of the right
+    # value on the right resource look like one. So the trace must exist, be
+    # ordered, be marked observed, and agree with the count -- on the good
+    # store (1 effect) and on the duplicating mutant (2) alike.
+    for store_name, want_effects in ((GoodStore.name, 1), (RacyBadStore.name, 2)):
+        src = good if store_name == GoodStore.name else results[store_name]
+        finding = next((x for x in src if x.id == "ARIB-REPLAY-001"), None)
+        ev = finding.evidence if finding else {}
+        trace = ev.get("effect_trace")
+        if not isinstance(trace, list):
+            failures.append(f"{store_name}: ARIB-REPLAY-001 publishes no effect_trace")
+            continue
+        if len(trace) != want_effects:
+            failures.append(f"{store_name}: effect_trace has {len(trace)} entries, "
+                            f"expected {want_effects}")
+        if len(trace) != ev.get("visible_occurrences"):
+            failures.append(f"{store_name}: effect_trace {len(trace)} disagrees with "
+                            f"visible_occurrences {ev.get('visible_occurrences')}")
+        if ev.get("evidence_kind") != "observed_effect_trace":
+            failures.append(f"{store_name}: evidence_kind {ev.get('evidence_kind')!r}, "
+                            f"expected 'observed_effect_trace'")
+        seqs = [e.get("seq") for e in trace]
+        if seqs != list(range(1, len(trace) + 1)):
+            failures.append(f"{store_name}: effect_trace seq not 1..n: {seqs}")
+        idxs = [e.get("store_index") for e in trace]
+        if idxs != sorted(idxs) or len(set(idxs)) != len(idxs):
+            failures.append(f"{store_name}: effect_trace not strictly ordered: {idxs}")
+
     # Report-layer guards. No scenario selection can currently produce an
     # all-abstained report, so the guard is unreachable from the CLI and would
     # rot untested (second external review, 2026-08-02) — exercise it directly.
